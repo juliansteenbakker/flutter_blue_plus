@@ -50,7 +50,12 @@ android {
             minifyEnabled false
         }
     }
-    namespace 'com.boskokg.flutter_blue_plus_example'
+
+    // Conditional for compatibility with AGP <4.2.
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.boskokg.flutter_blue_plus_example'
+    }
+
 }
 
 flutter {
